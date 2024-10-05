@@ -1,1 +1,1 @@
-# MyDFIR-Course
+# MyDFIR-SOC Analyst Course
