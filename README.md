@@ -1,7 +1,7 @@
 # MyDFIR-SOC Analyst Course
 
 ## Objective
-This course created by Steven M was my main resource of practical knowledge led by a Cybersecurity expert with over 5 years of experience. This course included 8 chapters with about 15 sections diving into the technical skills of digital forensics and incident response. It taught me how to set up and manage my own lab, SIEM, and active directory environments as well as applying techniques used by SOC experts. I used this course as a great source for developing a sharper methodology when triaging alerts and performing digital forensic analysis. The methods I learned from conducting investigations and writing reports from this course gave me the knowledge I needed to become a better SOC Analyst. 
+This course created by Steven M was my main resource of practical knowledge led by a Cybersecurity expert with over 5 years of experience. This course included 8 chapters with about 15 sections diving into the technical skills of digital forensics and incident response. It taught me how to set up and manage my own lab, SIEM, and active directory environments as well as applying techniques used by SOC experts. I learned how to utilize various technical tools by completing this program such as email, endpoint, static & dynamic malware analysis, OSINT, and network analysis. I used this course as a great source for developing a sharper methodology when triaging alerts and performing digital forensic analysis. The methods I learned from conducting investigations and writing reports from this course gave me the knowledge I needed to become a better SOC Analyst. 
 
 ## SOC Environment
 - Overview of the roles and challenges in a daily SOC environment
