@@ -83,7 +83,26 @@ This course created by Steven M was my main resource of practical knowledge led 
 
 ![Screenshot 2024-10-17 022206](https://github.com/user-attachments/assets/a9901a64-98b9-40a0-a14a-fee4e5117b77)
 
+## Endpoint Analysis
+- Using Splunk, I analyzed endpoint telemetry logs for potential intrusion activity based on each phase of the MITRE ATT&CK framework starting with Initial Access.
+- Initial Access - look for process creation events & outbound network connections (Sysmon 1 & 3), review successful authentication logins for accounts focusing on Logon_Type (3,7,10), and check successful logins with admin privileges (Windows Event 4624 & 4672).
+- Execution - Review living off the land binaries (cmd & powershell) commands, review processes using SYSWOW64 binaries & cmds, follow parent/child & GUID processes for a broader scope of process creation (Sysmon 1 & Windows Event 4688).
+- Persistence - Review new services/scheduled tasks (Windows Event 7045 & 4698), review newly created/modified "run" keys in registry (reg.exe, Windows Event 4657 & Sysmon 12), review newly created accounts both local & domain (net user & net local group), and search for scripts within startup folder.
+- Privilege Escalation - Review successful logins with admin privileges or attempts with alternate credentials (Windows Event 4672 & 4648) and WMI events w/ parent process WmiPrvse.exe (Windows Event 5861).
+- Defense Evasion - Check for Windows Defender being changed or disabled (Windows Event 5007 & 5001), look for new services & scheduled task (Windows Event 7045 & 4698), & check for tampering commands (Disabled, Modified, Added Exclusions).
+- Credential Access - Check for dump credential tools used in environment (Mimikatz, ProcDump, NTDSutil, Lazagne, vssadmin), review lsass.exe with granted access info 0x1010, 0x1410, & 0x1fffff, and check for activity in SAM HIVE (Windows Event 4663).
+- Discovery - Look for common discovery commands (net user, dir, nmap, reg query, nslookup, whoami), and check process creations (Sysmon 1 & Windows 4688).
+- Lateral Movement - Look for remote desktop or network logins (Logon_type 3, 7, & 10), search connection towards shared drive via SMB, search for remote connections using WMIC or PsExec/PsRemote, & review processes of named pipes (Sysmon 17 & 18).
+- Collection - Look for tools used to archive data (7zip, Winzip, WinRar, PS Compress-Archive), search for scripts using run discovery commands (.bat & .ps1), filter through SMB activity to port 445, and look for suspicious directories (TEMP, ProgramData, AppData)
+- Command & Control - Look for network connections to non-standard ports, initiated outbound network traffic (Sysmon 3) where initiated = true, and filter for DNS queries with above average length (Sysmon 22)
+- Exfiltration - Search for exfiltration tools used (rclone, mega, winscp, FileZilla) & DNS queries to cloud storage (Dropbox, Google Drive, MEGA, OneDrive) <br>
+<br>
 
+![Screenshot 2024-11-01 071821](https://github.com/user-attachments/assets/da4f8de8-d42b-403f-b9a5-1d88b38334ba)
+
+![Screenshot 2024-11-01 071520](https://github.com/user-attachments/assets/50da7387-372b-4846-b5e8-bb34ee0056a6)
+
+![Screenshot 2024-11-01 070750](https://github.com/user-attachments/assets/46b4f57c-b982-4a87-8133-b3c043bc66a8)
 
 
 
